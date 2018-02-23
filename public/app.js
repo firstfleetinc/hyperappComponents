@@ -2036,6 +2036,50 @@ var _Loading = require('../components/Loading/Loading');
 var Home = exports.Home = function Home(state, actions) {
     return function (props) {
 
+        var checkBoxItems = [{
+            type: 'checkbox',
+            name: 'checkbox',
+            value: '1',
+            checked: true
+        }, {
+            type: 'checkbox',
+            name: 'checkbox',
+            value: '1'
+        }, {
+            type: 'checkbox',
+            name: 'checkbox',
+            value: '1'
+        }];
+
+        var raidoItems = [{
+            type: 'radio',
+            value: '1',
+            label: 'options 1',
+            name: 'group1',
+            checked: true
+        }, {
+            type: 'radio',
+            value: '2',
+            name: 'group1',
+            label: 'options 2'
+        }, {
+            type: 'radio',
+            value: '3',
+            name: 'group1',
+            label: 'options 3'
+        }];
+
+        var selectOptions = [{
+            text: 'option 1',
+            value: '1'
+        }, {
+            text: 'option 1',
+            value: '2'
+        }, {
+            text: 'option 3',
+            value: '3'
+        }];
+
         return (0, _hyperapp.h)(
             _Layout.Container,
             { fluid: false },
@@ -2156,7 +2200,11 @@ var Home = exports.Home = function Home(state, actions) {
                         null,
                         'Text Input'
                     ),
-                    (0, _hyperapp.h)('p', null),
+                    (0, _hyperapp.h)(
+                        'p',
+                        null,
+                        'should be usable for any html input type'
+                    ),
                     (0, _hyperapp.h)(
                         'h4',
                         null,
@@ -2227,6 +2275,203 @@ var Home = exports.Home = function Home(state, actions) {
                             return console.log('onKeyUp Fired');
                         }
                     })
+                ),
+                (0, _hyperapp.h)(
+                    _Layout.Divider,
+                    {
+                        type: 'bottom' },
+                    (0, _hyperapp.h)(
+                        'h3',
+                        null,
+                        'TextArea'
+                    ),
+                    (0, _hyperapp.h)(
+                        'p',
+                        null,
+                        'html text area'
+                    ),
+                    (0, _hyperapp.h)(
+                        'h4',
+                        null,
+                        'Props'
+                    ),
+                    (0, _hyperapp.h)(
+                        'ul',
+                        null,
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'placeholder | string'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'name | string'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'id | string'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'value | value for input'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'required | boolean, type effects form validation'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'label | string'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'labelType | fixed, floating, none'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'onKeyUp | function'
+                        )
+                    ),
+                    (0, _hyperapp.h)(_Form.TextArea, {
+                        placeholder: 'placeholder',
+                        label: 'text-area',
+                        labelType: 'fixed',
+                        onKeyUp: function onKeyUp() {
+                            return console.log('on key up fired');
+                        } })
+                ),
+                (0, _hyperapp.h)(
+                    _Layout.Divider,
+                    { type: 'bottom' },
+                    (0, _hyperapp.h)(
+                        'h3',
+                        null,
+                        'Check Box / Radio Input'
+                    ),
+                    (0, _hyperapp.h)(
+                        'p',
+                        null,
+                        'Both use the CheckBox component. You make an array of meta data for items. '
+                    ),
+                    (0, _hyperapp.h)(
+                        'h4',
+                        null,
+                        'Props for CheckBox'
+                    ),
+                    (0, _hyperapp.h)(
+                        'ul',
+                        null,
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'items | array'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'type | checkbox || radio'
+                        )
+                    ),
+                    (0, _hyperapp.h)(
+                        'h4',
+                        null,
+                        'Props for items'
+                    ),
+                    (0, _hyperapp.h)(
+                        'ul',
+                        null,
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'type | radio for radio || checkbox for checkbox'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            ' name | string : all radios in a group should have same name'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'id | string'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'value | input value'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'checked | boolean'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'disabled | boolean'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'required | boolean'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'label | string'
+                        )
+                    ),
+                    (0, _hyperapp.h)(
+                        'form',
+                        null,
+                        (0, _hyperapp.h)(_Form.CheckBox, { type: 'checkbox', items: checkBoxItems })
+                    ),
+                    (0, _hyperapp.h)(
+                        'form',
+                        null,
+                        (0, _hyperapp.h)(_Form.CheckBox, { type: 'radio', items: raidoItems })
+                    )
+                ),
+                (0, _hyperapp.h)(
+                    _Layout.Divider,
+                    { type: 'bottom' },
+                    (0, _hyperapp.h)(
+                        'h3',
+                        null,
+                        'Select'
+                    ),
+                    (0, _hyperapp.h)(
+                        'p',
+                        null,
+                        'Dropdown select'
+                    ),
+                    (0, _hyperapp.h)(
+                        'h4',
+                        null,
+                        'Props for Select'
+                    ),
+                    (0, _hyperapp.h)(
+                        'ul',
+                        null,
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'items | array'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'type | checkbox || radio'
+                        )
+                    ),
+                    (0, _hyperapp.h)(_Form.Select, { options: selectOptions })
                 )
             )
         );
