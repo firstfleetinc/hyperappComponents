@@ -2080,6 +2080,17 @@ var Home = exports.Home = function Home(state, actions) {
             value: '3'
         }];
 
+        var chipItems = [{
+            remove: true,
+            onRemove: function onRemove() {
+                console.log('remove clicked');
+            },
+            text: 'chip 1'
+        }, {
+            text: 'chip 2'
+        }, {
+            text: 'chip 3'
+        }];
         return (0, _hyperapp.h)(
             _Layout.Container,
             { fluid: false },
@@ -2450,7 +2461,7 @@ var Home = exports.Home = function Home(state, actions) {
                     (0, _hyperapp.h)(
                         'p',
                         null,
-                        'Dropdown select'
+                        'Dropdown select, items are an array of meta data for items'
                     ),
                     (0, _hyperapp.h)(
                         'h4',
@@ -2471,7 +2482,84 @@ var Home = exports.Home = function Home(state, actions) {
                             'type | checkbox || radio'
                         )
                     ),
+                    (0, _hyperapp.h)(
+                        'h4',
+                        null,
+                        'Props for items'
+                    ),
+                    (0, _hyperapp.h)(
+                        'ul',
+                        null,
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'text | string'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'value | value for input'
+                        )
+                    ),
                     (0, _hyperapp.h)(_Form.Select, { options: selectOptions })
+                ),
+                (0, _hyperapp.h)(
+                    _Layout.Divider,
+                    { type: 'bottom' },
+                    (0, _hyperapp.h)(
+                        'h3',
+                        null,
+                        'Chips'
+                    ),
+                    (0, _hyperapp.h)(
+                        'p',
+                        null,
+                        'Tagging element, chips is an array of meta data for chip'
+                    ),
+                    (0, _hyperapp.h)(
+                        'h4',
+                        null,
+                        'Props for Chips'
+                    ),
+                    (0, _hyperapp.h)(
+                        'ul',
+                        null,
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'chips | array'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'style | style object'
+                        )
+                    ),
+                    (0, _hyperapp.h)(
+                        'h4',
+                        null,
+                        'Props for chip'
+                    ),
+                    (0, _hyperapp.h)(
+                        'ul',
+                        null,
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'remove | boolean, controls whether they have a remove button or not'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'onRemove | function'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'text | string'
+                        )
+                    ),
+                    (0, _hyperapp.h)(_Form.Chips, { chips: chipItems })
                 )
             )
         );

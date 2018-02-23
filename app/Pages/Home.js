@@ -2,7 +2,7 @@ import { h } from "hyperapp"
 import { Divider, Container, Panel } from '../components/Layout/Layout'
 import { Button, PageFab } from '../components/Buttons/Button'
 import { ActionCard } from '../components/Cards/Cards'
-import { Form, InlineForm, TextInput, TextArea, CheckBox, Select } from '../components/Forms/Form'
+import { Form, InlineForm, TextInput, TextArea, CheckBox, Select, Chips } from '../components/Forms/Form'
 import { LoadingSpinner } from '../components/Loading/Loading';
 
 export const Home = (state, actions) => props => {
@@ -63,6 +63,19 @@ export const Home = (state, actions) => props => {
         }
     ]
 
+    let chipItems = [
+        {
+            remove: true,
+            onRemove: () => {console.log('remove clicked')},
+            text: 'chip 1'
+        },
+        {
+            text: 'chip 2'
+        },
+        {
+            text: 'chip 3'
+        },
+    ]
     return (
         <Container fluid={false}>
 
@@ -185,13 +198,34 @@ export const Home = (state, actions) => props => {
                 </Divider>
                 <Divider type='bottom'>
                     <h3>Select</h3>
-                    <p>Dropdown select</p>
+                    <p>Dropdown select, items are an array of meta data for items</p>
                     <h4>Props for Select</h4>
                     <ul>
                         <li>items | array</li>
                         <li>type | checkbox || radio</li>
                     </ul>
+                    <h4>Props for items</h4>
+                    <ul>
+                        <li>text | string</li>
+                        <li>value | value for input</li>
+                    </ul>
                     <Select options={selectOptions}></Select>
+                </Divider>
+                <Divider type='bottom'>
+                    <h3>Chips</h3>
+                    <p>Tagging element, chips is an array of meta data for chip</p>
+                    <h4>Props for Chips</h4>
+                    <ul>
+                        <li>chips | array</li>
+                        <li>style | style object</li>
+                    </ul>
+                    <h4>Props for chip</h4>
+                    <ul>
+                        <li>remove | boolean, controls whether they have a remove button or not</li>
+                        <li>onRemove | function</li>
+                        <li>text | string</li>
+                    </ul>
+                    <Chips chips={chipItems}></Chips>
                 </Divider>
             </Panel>
 
