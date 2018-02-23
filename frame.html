@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    function calcHeight(iframeElement) {
+        console.log(iframeElement)
+        var the_height = document.getElementById('Form').offsetHeight;
+        iframeElement.height = the_height - 200;
+    }
+</script>
+<iframe src="/desktopmodules/ffWebinarLibrary/index.html" onLoad="calcHeight(this);" frameborder="0" id="the_iframe" width="100%">
+
+</iframe>
