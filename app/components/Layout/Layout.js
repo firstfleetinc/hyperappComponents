@@ -23,7 +23,7 @@ export const Divider = ({ type }, children) => {
         }
         case 'right': {
             classType = 'mui--divider-right'
-            divType = <span style={{paddingLeft: '16px', marginRight: '16px'}} class={classType}>{children}</span>
+            divType = <span style={{paddingRight: '16px', marginRight: '16px'}} class={classType}>{children}</span>
             break
         }
         default: {

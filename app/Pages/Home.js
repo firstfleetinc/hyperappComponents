@@ -66,7 +66,7 @@ export const Home = (state, actions) => props => {
     let chipItems = [
         {
             remove: true,
-            onRemove: () => {console.log('remove clicked')},
+            onRemove: () => { console.log('remove clicked') },
             text: 'chip 1'
         },
         {
@@ -76,10 +76,60 @@ export const Home = (state, actions) => props => {
             text: 'chip 3'
         },
     ]
+
+    let actionCardButtons = [
+        {
+            text: 'Button 1',
+            type: 'raised',
+            color: 'primary'
+        },
+        {
+            text: 'Button 2',
+            type: 'flat',
+            color: 'danger'
+        },
+        {
+            text: '3',
+            type: 'float',
+            size: 'large',
+            color: 'accent'
+        }
+    ]
     return (
         <Container fluid={false}>
-
-
+            <Divider type="bottom"><h1>Layout Components</h1></Divider>
+            <Panel>
+                <Divider type="bottom">
+                    <h3>Container</h3>
+                    <p>A page wrapper</p>
+                    <h4>Props</h4>
+                    <ul>
+                        <li>fluid | boolean</li>
+                    </ul>
+                </Divider>
+                <Divider type="bottom">
+                    <h3>Divider</h3>
+                    <p>A line divider with padding, wrap component</p>
+                    <h4>Props</h4>
+                    <ul>
+                        <li>type | [top, bottom, left, right]</li>
+                    </ul>
+                    <Divider type="top">top</Divider>
+                    <Divider type="bottom">bottom</Divider>
+                    <div style={{ height: '16px' }}></div>
+                    <Divider type="left">left</Divider>
+                    <Divider type="right">right</Divider>
+                </Divider>
+                <Divider type="bottom">
+                    <h3>Panel</h3>
+                    <p>Used for making cards / raised content areas</p>
+                    <h4>Props</h4>
+                    <ul>
+                        <li>style | style object</li>
+                    </ul>
+                    <Panel>PANEL</Panel>
+                </Divider>
+            </Panel>
             <Divider type="bottom"><h1>Form Components</h1></Divider>
 
             <Panel>
@@ -228,7 +278,78 @@ export const Home = (state, actions) => props => {
                     <Chips chips={chipItems}></Chips>
                 </Divider>
             </Panel>
-
+            <Divider type="bottom"><h1>Buttons</h1></Divider>
+            <Panel>
+                <Divider type='bottom'>
+                    <h3>Button</h3>
+                    <p>A Button</p>
+                    <h4>Props</h4>
+                    <ul>
+                        <li>type | [null, flat, raised, float]</li>
+                        <li>color | [null, primary, accent, danger]</li>
+                        <li>size | [null, small, large]</li>
+                        <li>text | string</li>
+                        <li>onClick | function</li>
+                    </ul>
+                    <Button
+                        color='primary'
+                        size='large'
+                        text='Button'>
+                    </Button>
+                    <Button
+                        type='flat'
+                        color='primary'
+                        text='Button flat primary'>
+                    </Button>
+                    <Button
+                        type='raised'
+                        color='accent'
+                        text='Button raised accent'>
+                    </Button>
+                    <Button
+                        type='float'
+                        color='danger'
+                        size='large'
+                        text='+'>
+                    </Button>
+                </Divider>
+                <Divider type='bottom'>
+                    <h3>PageFab</h3>
+                    <p>A page set floating button, sets a button in the lower right hand corner above other page content</p>
+                    <h4>Props</h4>
+                    <ul>
+                        <li>type | [null, flat, raised, float]</li>
+                        <li>color | [null, primary, accent, danger]</li>
+                        <li>size | [null, small, large]</li>
+                        <li>text | string</li>
+                        <li>onClick | function</li>
+                    </ul>
+                    <PageFab
+                        type='raised'
+                        color='primary'
+                        text='PageFab'
+                        size='large'></PageFab>
+                </Divider>
+            </Panel>
+            <Divider type="bottom"><h1>Cards</h1></Divider>
+            <Panel>
+                <h3>ActionCard</h3>
+                <p>A card that can take a row of buttons</p>
+                <h4>Props</h4>
+                <ul>
+                    <li>title | string</li>
+                    <li>content | string</li>
+                    <li>secondaryText | string</li>
+                    <li>accentText | string</li>
+                    <li>buttons | array of button metatdata</li>
+                </ul>
+                <ActionCard 
+                buttons={actionCardButtons}
+                title='Action Card'
+                content='This is card content'
+                accentText='accenting'
+                secondaryText='secondary'></ActionCard>
+            </Panel>
         </Container >
     )
 }

@@ -24,6 +24,10 @@ export const ActionCard = ({ title, content, secondaryText, accentText, buttons 
         color: '#757575'
     }
 
+    let myButtons = buttons.map((item) => {
+        return (<Button {...item}></Button>)
+    })
+
     return (
         <Panel>
             <div style={titleStyle}>
@@ -41,7 +45,7 @@ export const ActionCard = ({ title, content, secondaryText, accentText, buttons 
             </div>
             <div style={footerStyle}>
             <div>
-                {children}
+                {myButtons}
             </div>
                 <p class="mui--text-accent">{secondaryText}</p>
             </div>
