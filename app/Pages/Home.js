@@ -97,6 +97,11 @@ export const Home = (state, actions) => props => {
     ]
     return (
         <Container fluid={false}>
+            <Divider type="bottom"><h1>Important Links</h1></Divider>
+            <ul>
+                <li><a href="https://www.muicss.com/">CSS Library</a></li>
+                <li><a href="https://github.com/firstfleetinc/hyperappComponents">Github</a></li>
+            </ul>
             <Divider type="bottom"><h1>Layout Components</h1></Divider>
             <Panel>
                 <Divider type="bottom">
