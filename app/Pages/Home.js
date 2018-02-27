@@ -1,9 +1,9 @@
 import { h } from "hyperapp"
-import { Divider, Container, Panel } from '../components/Layout/Layout'
-import { Button, PageFab } from '../components/Buttons/Button'
-import { ActionCard } from '../components/Cards/Cards'
-import { Form, InlineForm, TextInput, TextArea, CheckBox, Select, Chips } from '../components/Forms/Form'
-import { LoadingSpinner } from '../components/Loading/Loading';
+import { Divider, Container, Panel } from 'Layout'
+import { Button, PageFab } from 'Button'
+import { ActionCard } from 'Cards'
+import { Form, InlineForm, TextInput, TextArea, CheckBox, Select, Chips } from 'Form'
+import { LoadingSpinner } from 'Loading';
 
 export const Home = (state, actions) => props => {
 

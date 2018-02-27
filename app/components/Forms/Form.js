@@ -1,5 +1,5 @@
 import { h } from 'hyperapp'
-import { Button } from '../Buttons/Button'
+import { Button } from 'Button'
 
 export const Form = ({ title, buttonText, onSubmit }, children) => {
 

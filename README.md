@@ -26,3 +26,9 @@ To use proposed JS features not included into ES6, do this:
 
 * `npm install --save-dev babel-preset-stage-0`
 * in `brunch-config.js`, add the preset: `presets: ['latest', 'stage-0']`
+
+# How to Use
+
+## Use Components in another project
+
+Clone the repo, drop hy

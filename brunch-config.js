@@ -10,6 +10,10 @@ exports.files = {
   }
 };
 
+exports.modules = {
+  nameCleaner: path => path.replace(/^app\/components\/.*?\//, '')
+}
+
 exports.plugins = {
-  babel: {presets: ['latest'], plugins: ['es6-promise', ['transform-react-jsx', { "pragma": "h" }]]}
+  babel: { presets: ['latest'], plugins: ['es6-promise', ['transform-react-jsx', { "pragma": "h" }]] }
 };

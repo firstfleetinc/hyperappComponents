@@ -1,5 +1,5 @@
-import { Panel } from '../Layout/Layout'
-import { Button } from '../Buttons/Button'
+import { Panel } from 'Layout'
+import { Button } from 'Button'
 import { h } from "hyperapp"
 
 export const ActionCard = ({ title, content, secondaryText, accentText, buttons }, children) => {
