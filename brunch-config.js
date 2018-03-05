@@ -11,7 +11,8 @@ exports.files = {
 };
 
 exports.modules = {
-  nameCleaner: path => path.replace(/^app\/components\/.*?\//, '')
+  nameCleaner: path => path.replace(/^app\/components\/.*?\//, ''),
+  wrapper: false
 }
 
 exports.plugins = {

@@ -2013,7 +2013,6 @@ require.register("whatwg-fetch/fetch.js", function(exports, require, module) {
 })(typeof self !== 'undefined' ? self : this);
   })();
 });
-require.register("app/Pages/Home.js", function(exports, require, module) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2928,10 +2927,7 @@ var Home = exports.Home = function Home(state, actions) {
         );
     };
 };
-});
-
-;require.register("app/actions.js", function(exports, require, module) {
-"use strict";
+;"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -2943,10 +2939,7 @@ var _router = require("@hyperapp/router");
 var actions = exports.actions = {
   location: _router.location.actions
 };
-});
-
-;require.register("Button.js", function(exports, require, module) {
-'use strict';
+;'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3045,10 +3038,7 @@ var PageFab = exports.PageFab = function PageFab(_ref2, children) {
         (0, _hyperapp.h)(Button, { type: type, color: color, size: size, text: text, onClick: onClick })
     );
 };
-});
-
-;require.register("Cards.js", function(exports, require, module) {
-'use strict';
+;'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3135,10 +3125,7 @@ var ActionCard = exports.ActionCard = function ActionCard(_ref, children) {
         )
     );
 };
-});
-
-;require.register("Form.js", function(exports, require, module) {
-'use strict';
+;'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3456,10 +3443,7 @@ var Chip = exports.Chip = function Chip(_ref10, children) {
 
     return chipItem;
 };
-});
-
-;require.register("Layout.js", function(exports, require, module) {
-'use strict';
+;'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3555,10 +3539,7 @@ var Panel = exports.Panel = function Panel(_ref3, children) {
         children
     );
 };
-});
-
-;require.register("Loading.js", function(exports, require, module) {
-'use strict';
+;'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3582,10 +3563,7 @@ var LoadingSpinner = exports.LoadingSpinner = function LoadingSpinner(_ref, chil
         )
     );
 };
-});
-
-;require.register("cssUtils.js", function(exports, require, module) {
-'use strict';
+;'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3593,10 +3571,7 @@ Object.defineProperty(exports, "__esModule", {
 var mergeClass = exports.mergeClass = function mergeClass(classes) {
     return classes.join(' ');
 };
-});
-
-;require.register("app/initialize.js", function(exports, require, module) {
-"use strict";
+;"use strict";
 
 var _hyperapp = require("hyperapp");
 
@@ -3626,14 +3601,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var unsubscribe = _router.location.subscribe(main.location);
 });
-});
-
-require.register("app/logic.js", function(exports, require, module) {
 "use strict";
-});
-
-;require.register("app/state.js", function(exports, require, module) {
-"use strict";
+;"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3645,10 +3614,7 @@ var _router = require("@hyperapp/router");
 var state = exports.state = {
     location: _router.location.state
 };
-});
-
-;require.register("app/view.js", function(exports, require, module) {
-'use strict';
+;'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -3674,8 +3640,6 @@ var view = exports.view = function view(state, actions) {
     (0, _hyperapp.h)(_router.Route, { path: '/', render: (0, _Home.Home)(state, actions) })
   );
 };
-});
-
 ;require.alias("@hyperapp/logger/dist/logger.js", "@hyperapp/logger");
 require.alias("@hyperapp/router/dist/router.js", "@hyperapp/router");
 require.alias("es6-promise/dist/es6-promise.js", "es6-promise");
