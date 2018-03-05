@@ -17,18 +17,11 @@ Clone this repo manually or use `brunch new dir -s es6`
     * `npm run build` — builds minified project for production
 * Add Components
     * Drop your component folders in the components directory. 
-    * run rollup -c to generate a new prod hyperAppComponents file.
+    * run `rollup -c` to generate a new prod hyperAppComponents file.
     * Add your components to the home page demo.
-
-## ES-next
-
-To use proposed JS features not included into ES6, do this:
-
-* `npm install --save-dev babel-preset-stage-0`
-* in `brunch-config.js`, add the preset: `presets: ['latest', 'stage-0']`
 
 # How to Use
 
 ## Use Components in another project
 
-Clone the repo, drop hy
+Go to releases on the github page, download the latest hyperAppcComponents.js and import components into your project. Don't forget to grab the hyperAppComponents.css as well. 
