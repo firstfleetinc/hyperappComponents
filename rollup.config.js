@@ -16,7 +16,7 @@ const plugins = [
 export default {
     input: 'app/components/**/*.js',
     output: {
-      file: 'bundle.js',
+      file: 'hyperAppComponents.js',
       format: 'es'
     },
     plugins: plugins
