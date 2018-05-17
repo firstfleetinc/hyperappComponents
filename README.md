@@ -12,9 +12,10 @@ Clone this repo manually or use `brunch new dir -s es6`
     * `npm start` — watches the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history).
     * `npm run build` — builds minified project for production
 * Add Components
-    * Drop your component folders in the components directory. 
-    * run `rollup -c` to generate a new prod hyperAppComponents file.
+    * Copy all your component functions into hyperapp.js 
+    * run `rollup -c` to generate a new prod bundle.js file.
     * Add your components to the home page demo.
+    * copy bundle.js contents into the hyperapp npm project and publish to NPM
 
 # How to Use
 
