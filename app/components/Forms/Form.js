@@ -180,11 +180,15 @@ export const Select = ({ options, required, label, onChange }, children) => {
     )
 }
 
-export const Option = ({ text, value }) => {
-
-    return (
-        <option value={value}>{text}</option>
-    )
+export const Option = ({ text, value, isSelected }) => {
+    let retVal = ""
+    if (isSelected) {
+        retVal = <option value={value} selected>{text}</option>
+    }
+    else {
+        retVal =  <option value={value}>{text}</option>
+    }
+    return retVal
 }
 
 export const Chips = ({ chips, style }, children) => {
