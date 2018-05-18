@@ -263,6 +263,7 @@ export const Home = (state, actions) => props => {
                     <ul>
                         <li>text | string</li>
                         <li>value | value for input</li>
+                        <li>isSelected | boolean</li>
                     </ul>
                     <Select options={selectOptions}></Select>
                 </Divider>

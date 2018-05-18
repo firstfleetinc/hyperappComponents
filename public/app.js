@@ -2673,6 +2673,11 @@ var Home = exports.Home = function Home(state, actions) {
                             'li',
                             null,
                             'value | value for input'
+                        ),
+                        (0, _hyperapp.h)(
+                            'li',
+                            null,
+                            'isSelected | boolean'
                         )
                     ),
                     (0, _hyperapp.h)(_Form.Select, { options: selectOptions })
