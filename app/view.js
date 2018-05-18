@@ -3,7 +3,7 @@ import 'whatwg-fetch'
 import { h, app } from "hyperapp"
 import { actions } from './actions'
 import { Route } from "@hyperapp/router"
-import { Home } from './Pages/Home'
+import { Home } from './Pages/Home.js'
 
 
 

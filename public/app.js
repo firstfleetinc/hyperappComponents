@@ -1352,7 +1352,7 @@ return Promise$1;
 require.register("hyperapp/dist/hyperapp.js", function(exports, require, module) {
   require = __makeRelativeRequire(require, {}, "hyperapp");
   (function() {
-    !function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports):"function"==typeof define&&define.amd||n(e.hyperapp={})}(this,function(e){"use strict";e.h=function(e,n){for(var t,r=[],o=[],i=arguments.length;i-- >2;)r.push(arguments[i]);for(;r.length;)if((t=r.pop())&&t.pop)for(i=t.length;i--;)r.push(t[i]);else null!=t&&!0!==t&&!1!==t&&o.push(t);return"function"==typeof e?e(n||{},o):{nodeName:e,attributes:n||{},children:o,key:n&&n.key}},e.app=function(e,n,t,r){var o,i=[],u=r&&r.children[0]||null,l=u&&function e(n,t){return{nodeName:n.nodeName.toLowerCase(),attributes:{},children:t.call(n.childNodes,function(n){return 3===n.nodeType?n.nodeValue:e(n,t)})}}(u,[].map),f=s(e),a=s(n);return d(function e(n,t,r){for(var o in r)"function"==typeof r[o]?function(e,o){r[e]=function(e){return"function"==typeof(e=o(e))&&(e=e(p(n,f),r)),e&&e!==(t=p(n,f))&&!e.then&&d(f=h(n,s(t,e),f)),e}}(o,r[o]):e(n.concat(o),t[o]=t[o]||{},r[o]=s(r[o]))}([],f,a)),a;function c(){o=!o;var e=t(f,a);for(r&&!o&&(u=function e(n,t,r,o,u,l){if(o===r);else if(null==r)t=n.insertBefore(y(o,u),t);else if(o.nodeName&&o.nodeName===r.nodeName){!function(e,n,t,r){for(var o in s(n,t))t[o]!==("value"===o||"checked"===o?e[o]:n[o])&&m(e,o,t[o],r,n[o]);t.onupdate&&i.push(function(){t.onupdate(e,n)})}(t,r.attributes,o.attributes,u=u||"svg"===o.nodeName);for(var f=[],a={},c={},d=0;d<r.children.length;d++){f[d]=t.childNodes[d];var h=r.children[d],p=v(h);null!=p&&(a[p]=[f[d],h])}for(var d=0,b=0;b<o.children.length;){var h=r.children[d],g=o.children[b],p=v(h),k=v(g);if(c[p])d++;else if(null==k)null==p&&(e(t,f[d],h,g,u),b++),d++;else{var w=a[k]||[];p===k?(e(t,w[0],w[1],g,u),d++):w[0]?e(t,t.insertBefore(w[0],f[d]),w[1],g,u):e(t,f[d],null,g,u),b++,c[k]=g}}for(;d<r.children.length;){var h=r.children[d];null==v(h)&&N(t,f[d],h),d++}for(var d in a)c[a[d][1].key]||N(t,a[d][0],a[d][1])}else o.nodeName===r.nodeName?t.nodeValue=o:(t=n.insertBefore(y(o,u),l=t),N(n,l,r));return t}(r,u,l,l=e));e=i.pop();)e()}function d(){o||(o=!o,setTimeout(c))}function s(e,n){var t={};for(var r in e)t[r]=e[r];for(var r in n)t[r]=n[r];return t}function h(e,n,t){var r={};return e.length?(r[e[0]]=e.length>1?h(e.slice(1),n,t[e[0]]):n,s(t,r)):n}function p(e,n){for(var t=0;t<e.length;t++)n=n[e[t]];return n}function v(e){return e?e.key:null}function m(e,n,t,r,o){if("key"===n);else if("style"===n)for(var i in s(o,t))e[n][i]=null==t||null==t[i]?"":t[i];else"function"==typeof t||n in e&&!r?e[n]=null==t?"":t:null!=t&&!1!==t&&e.setAttribute(n,t),null!=t&&!1!==t||e.removeAttribute(n)}function y(e,n){var t="string"==typeof e||"number"==typeof e?document.createTextNode(e):(n=n||"svg"===e.nodeName)?document.createElementNS("http://www.w3.org/2000/svg",e.nodeName):document.createElement(e.nodeName);if(e.attributes){e.attributes.oncreate&&i.push(function(){e.attributes.oncreate(t)});for(var r=0;r<e.children.length;r++)t.appendChild(y(e.children[r],n));for(var o in e.attributes)m(t,o,e.attributes[o],n)}return t}function N(e,n,t,r){function o(){e.removeChild(function e(n,t,r){if(r=t.attributes){for(var o=0;o<t.children.length;o++)e(n.childNodes[o],t.children[o]);r.ondestroy&&r.ondestroy(n)}return n}(n,t))}t.attributes&&(r=t.attributes.onremove)?r(n,o):o()}}});
+    !function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports):"function"==typeof define&&define.amd?define(["exports"],n):n(e.hyperapp={})}(this,function(e){"use strict";e.h=function(e,n){for(var t=[],r=[],o=arguments.length;o-- >2;)t.push(arguments[o]);for(;t.length;){var u=t.pop();if(u&&u.pop)for(o=u.length;o--;)t.push(u[o]);else null!=u&&!0!==u&&!1!==u&&r.push(u)}return"function"==typeof e?e(n||{},r):{nodeName:e,attributes:n||{},children:r,key:n&&n.key}},e.app=function(e,n,t,r){var o,u=[].map,i=r&&r.children[0]||null,l=i&&function e(n){return{nodeName:n.nodeName.toLowerCase(),attributes:{},children:u.call(n.childNodes,function(n){return 3===n.nodeType?n.nodeValue:e(n)})}}(i),f=[],a=!0,c=p(e),s=function e(n,t,r){for(var o in r)"function"==typeof r[o]?function(e,o){r[e]=function(e){var u=o(e);return"function"==typeof u&&(u=u(y(n,c),r)),u&&u!==(t=y(n,c))&&!u.then&&h(c=m(n,p(t,u),c)),u}}(o,r[o]):e(n.concat(o),t[o]=p(t[o]),r[o]=p(r[o]));return r}([],c,p(n));return h(),s;function d(e){return"function"==typeof e?d(e(c,s)):null!=e?e:""}function v(){o=!o;var e=d(t);for(r&&!o&&(i=function e(n,t,r,o,u){if(o===r);else if(null==r||r.nodeName!==o.nodeName){var i=function e(n,t){var r="string"==typeof n||"number"==typeof n?document.createTextNode(n):(t=t||"svg"===n.nodeName)?document.createElementNS("http://www.w3.org/2000/svg",n.nodeName):document.createElement(n.nodeName),o=n.attributes;if(o){o.oncreate&&f.push(function(){o.oncreate(r)});for(var u=0;u<n.children.length;u++)r.appendChild(e(n.children[u]=d(n.children[u]),t));for(var i in o)b(r,i,o[i],null,t)}return r}(o,u);n.insertBefore(i,t),null!=r&&k(n,t,r),t=i}else if(null==r.nodeName)t.nodeValue=o;else{!function(e,n,t,r){for(var o in p(n,t))t[o]!==("value"===o||"checked"===o?e[o]:n[o])&&b(e,o,t[o],n[o],r);var u=a?t.oncreate:t.onupdate;u&&f.push(function(){u(e,n)})}(t,r.attributes,o.attributes,u=u||"svg"===o.nodeName);for(var l={},c={},s=[],v=r.children,h=o.children,m=0;m<v.length;m++){s[m]=t.childNodes[m];var y=g(v[m]);null!=y&&(l[y]=[s[m],v[m]])}for(var m=0,N=0;N<h.length;){var y=g(v[m]),w=g(h[N]=d(h[N]));if(c[y])m++;else if(null==w||a)null==y&&(e(t,s[m],v[m],h[N],u),N++),m++;else{var x=l[w]||[];y===w?(e(t,x[0],x[1],h[N],u),m++):x[0]?e(t,t.insertBefore(x[0],s[m]),x[1],h[N],u):e(t,s[m],null,h[N],u),c[w]=h[N],N++}}for(;m<v.length;)null==g(v[m])&&k(t,s[m],v[m]),m++;for(var m in l)c[m]||k(t,l[m][0],l[m][1])}return t}(r,i,l,l=e)),a=!1;f.length;)f.pop()()}function h(){o||(o=!0,setTimeout(v))}function p(e,n){var t={};for(var r in e)t[r]=e[r];for(var r in n)t[r]=n[r];return t}function m(e,n,t){var r={};return e.length?(r[e[0]]=e.length>1?m(e.slice(1),n,t[e[0]]):n,p(t,r)):n}function y(e,n){for(var t=0;t<e.length;)n=n[e[t++]];return n}function g(e){return e?e.key:null}function N(e){return e.currentTarget.events[e.type](e)}function b(e,n,t,r,o){if("key"===n);else if("style"===n)for(var u in p(r,t)){var i=null==t||null==t[u]?"":t[u];"-"===u[0]?e[n].setProperty(u,i):e[n][u]=i}else"o"===n[0]&&"n"===n[1]?(n=n.slice(2),e.events?r||(r=e.events[n]):e.events={},e.events[n]=t,t?r||e.addEventListener(n,N):e.removeEventListener(n,N)):n in e&&"list"!==n&&!o?e[n]=null==t?"":t:null!=t&&!1!==t&&e.setAttribute(n,t),null!=t&&!1!==t||e.removeAttribute(n)}function k(e,n,t){function r(){e.removeChild(function e(n,t){var r=t.attributes;if(r){for(var o=0;o<t.children.length;o++)e(n.childNodes[o],t.children[o]);r.ondestroy&&r.ondestroy(n)}return n}(n,t))}var o=t.attributes&&t.attributes.onremove;o?o(n,r):r()}}});
 //# sourceMappingURL=hyperapp.js.map
   })();
 });
@@ -1910,7 +1910,10 @@ require.register("whatwg-fetch/fetch.js", function(exports, require, module) {
 
   function parseHeaders(rawHeaders) {
     var headers = new Headers()
-    rawHeaders.split(/\r?\n/).forEach(function(line) {
+    // Replace instances of \r\n and \n followed by at least one space or horizontal tab with a space
+    // https://tools.ietf.org/html/rfc7230#section-3.2
+    var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ')
+    preProcessedHeaders.split(/\r?\n/).forEach(function(line) {
       var parts = line.split(':')
       var key = parts.shift().trim()
       if (key) {
@@ -1929,7 +1932,7 @@ require.register("whatwg-fetch/fetch.js", function(exports, require, module) {
     }
 
     this.type = 'default'
-    this.status = 'status' in options ? options.status : 200
+    this.status = options.status === undefined ? 200 : options.status
     this.ok = this.status >= 200 && this.status < 300
     this.statusText = 'statusText' in options ? options.statusText : 'OK'
     this.headers = new Headers(options.headers)
@@ -1996,6 +1999,8 @@ require.register("whatwg-fetch/fetch.js", function(exports, require, module) {
 
       if (request.credentials === 'include') {
         xhr.withCredentials = true
+      } else if (request.credentials === 'omit') {
+        xhr.withCredentials = false
       }
 
       if ('responseType' in xhr && support.blob) {
@@ -2013,6 +2018,7 @@ require.register("whatwg-fetch/fetch.js", function(exports, require, module) {
 })(typeof self !== 'undefined' ? self : this);
   })();
 });
+require.register("Pages/Home.js", function(exports, require, module) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2022,15 +2028,15 @@ exports.Home = undefined;
 
 var _hyperapp = require('hyperapp');
 
-var _Layout = require('Layout');
+var _Layout = require('../components/Layout/Layout.js');
 
-var _Button = require('Button');
+var _Buttons = require('../components/Buttons/Buttons.js');
 
-var _Cards = require('Cards');
+var _Cards = require('../components/Cards/Cards.js');
 
-var _Form = require('Form');
+var _Form = require('../components/Forms/Form.js');
 
-var _Loading = require('Loading');
+var _Loading = require('../components/Loading/Loading.js');
 
 var Home = exports.Home = function Home(state, actions) {
     return function (props) {
@@ -2789,19 +2795,19 @@ var Home = exports.Home = function Home(state, actions) {
                             'onClick | function'
                         )
                     ),
-                    (0, _hyperapp.h)(_Button.Button, {
+                    (0, _hyperapp.h)(_Buttons.Button, {
                         color: 'primary',
                         size: 'large',
                         text: 'Button' }),
-                    (0, _hyperapp.h)(_Button.Button, {
+                    (0, _hyperapp.h)(_Buttons.Button, {
                         type: 'flat',
                         color: 'primary',
                         text: 'Button flat primary' }),
-                    (0, _hyperapp.h)(_Button.Button, {
+                    (0, _hyperapp.h)(_Buttons.Button, {
                         type: 'raised',
                         color: 'accent',
                         text: 'Button raised accent' }),
-                    (0, _hyperapp.h)(_Button.Button, {
+                    (0, _hyperapp.h)(_Buttons.Button, {
                         type: 'float',
                         color: 'danger',
                         size: 'large',
@@ -2854,7 +2860,7 @@ var Home = exports.Home = function Home(state, actions) {
                             'onClick | function'
                         )
                     ),
-                    (0, _hyperapp.h)(_Button.PageFab, {
+                    (0, _hyperapp.h)(_Buttons.PageFab, {
                         type: 'raised',
                         color: 'primary',
                         text: 'PageFab',
@@ -2927,7 +2933,10 @@ var Home = exports.Home = function Home(state, actions) {
         );
     };
 };
-;"use strict";
+});
+
+;require.register("actions.js", function(exports, require, module) {
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -2939,7 +2948,10 @@ var _router = require("@hyperapp/router");
 var actions = exports.actions = {
   location: _router.location.actions
 };
-;'use strict';
+});
+
+;require.register("components/Buttons/Buttons.js", function(exports, require, module) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -2948,7 +2960,7 @@ exports.PageFab = exports.Button = undefined;
 
 var _hyperapp = require('hyperapp');
 
-var _cssUtils = require('cssUtils');
+var _cssUtils = require('../Util/cssUtils.js');
 
 var Button = exports.Button = function Button(_ref, children) {
     var type = _ref.type,
@@ -3038,16 +3050,19 @@ var PageFab = exports.PageFab = function PageFab(_ref2, children) {
         (0, _hyperapp.h)(Button, { type: type, color: color, size: size, text: text, onClick: onClick })
     );
 };
-;'use strict';
+});
+
+;require.register("components/Cards/Cards.js", function(exports, require, module) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.ActionCard = undefined;
 
-var _Layout = require('Layout');
+var _Layout = require('../Layout/Layout.js');
 
-var _Button = require('Button');
+var _Buttons = require('../Buttons/Buttons.js');
 
 var _hyperapp = require('hyperapp');
 
@@ -3080,7 +3095,7 @@ var ActionCard = exports.ActionCard = function ActionCard(_ref, children) {
     };
 
     var myButtons = buttons.map(function (item) {
-        return (0, _hyperapp.h)(_Button.Button, item);
+        return (0, _hyperapp.h)(_Buttons.Button, item);
     });
 
     return (0, _hyperapp.h)(
@@ -3125,7 +3140,10 @@ var ActionCard = exports.ActionCard = function ActionCard(_ref, children) {
         )
     );
 };
-;'use strict';
+});
+
+;require.register("components/Forms/Form.js", function(exports, require, module) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3134,7 +3152,7 @@ exports.Chip = exports.Chips = exports.Option = exports.Select = exports.CheckBo
 
 var _hyperapp = require('hyperapp');
 
-var _Button = require('Button');
+var _Buttons = require('../Buttons/Buttons.js');
 
 var Form = exports.Form = function Form(_ref, children) {
     var title = _ref.title,
@@ -3153,7 +3171,7 @@ var Form = exports.Form = function Form(_ref, children) {
             title
         ),
         children,
-        (0, _hyperapp.h)(_Button.Button, { color: 'primary', text: buttonText })
+        (0, _hyperapp.h)(_Buttons.Button, { color: 'primary', text: buttonText })
     );
 };
 
@@ -3169,7 +3187,7 @@ var InlineForm = exports.InlineForm = function InlineForm(_ref2, children) {
         (0, _hyperapp.h)(
             'span',
             { style: { paddingLeft: '16px' } },
-            (0, _hyperapp.h)(_Button.Button, { color: 'primary', text: buttonText, onClick: onSubmit })
+            (0, _hyperapp.h)(_Buttons.Button, { color: 'primary', text: buttonText, onClick: onSubmit })
         )
     );
 };
@@ -3388,14 +3406,24 @@ var Select = exports.Select = function Select(_ref7, children) {
 
 var Option = exports.Option = function Option(_ref8) {
     var text = _ref8.text,
-        value = _ref8.value;
+        value = _ref8.value,
+        isSelected = _ref8.isSelected;
 
-
-    return (0, _hyperapp.h)(
-        'option',
-        { value: value },
-        text
-    );
+    var retVal = "";
+    if (isSelected) {
+        retVal = (0, _hyperapp.h)(
+            'option',
+            { value: value, selected: true },
+            text
+        );
+    } else {
+        retVal = (0, _hyperapp.h)(
+            'option',
+            { value: value },
+            text
+        );
+    }
+    return retVal;
 };
 
 var Chips = exports.Chips = function Chips(_ref9, children) {
@@ -3443,7 +3471,10 @@ var Chip = exports.Chip = function Chip(_ref10, children) {
 
     return chipItem;
 };
-;'use strict';
+});
+
+;require.register("components/Layout/Layout.js", function(exports, require, module) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3539,7 +3570,10 @@ var Panel = exports.Panel = function Panel(_ref3, children) {
         children
     );
 };
-;'use strict';
+});
+
+;require.register("components/Loading/Loading.js", function(exports, require, module) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3563,7 +3597,10 @@ var LoadingSpinner = exports.LoadingSpinner = function LoadingSpinner(_ref, chil
         )
     );
 };
-;'use strict';
+});
+
+;require.register("components/Util/cssUtils.js", function(exports, require, module) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3571,7 +3608,10 @@ Object.defineProperty(exports, "__esModule", {
 var mergeClass = exports.mergeClass = function mergeClass(classes) {
     return classes.join(' ');
 };
-;"use strict";
+});
+
+;require.register("initialize.js", function(exports, require, module) {
+"use strict";
 
 var _hyperapp = require("hyperapp");
 
@@ -3601,8 +3641,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var unsubscribe = _router.location.subscribe(main.location);
 });
+});
+
+require.register("logic.js", function(exports, require, module) {
 "use strict";
-;"use strict";
+});
+
+;require.register("state.js", function(exports, require, module) {
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3614,7 +3660,10 @@ var _router = require("@hyperapp/router");
 var state = exports.state = {
     location: _router.location.state
 };
-;'use strict';
+});
+
+;require.register("view.js", function(exports, require, module) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -3629,7 +3678,7 @@ var _actions = require('./actions');
 
 var _router = require('@hyperapp/router');
 
-var _Home = require('./Pages/Home');
+var _Home = require('./Pages/Home.js');
 
 require('es6-promise').polyfill();
 var view = exports.view = function view(state, actions) {
@@ -3640,6 +3689,8 @@ var view = exports.view = function view(state, actions) {
     (0, _hyperapp.h)(_router.Route, { path: '/', render: (0, _Home.Home)(state, actions) })
   );
 };
+});
+
 ;require.alias("@hyperapp/logger/dist/logger.js", "@hyperapp/logger");
 require.alias("@hyperapp/router/dist/router.js", "@hyperapp/router");
 require.alias("es6-promise/dist/es6-promise.js", "es6-promise");
