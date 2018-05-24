@@ -276,7 +276,8 @@ var TextArea = function TextArea(_ref7, children) {
         required = _ref7.required,
         label = _ref7.label,
         labelType = _ref7.labelType,
-        onKeyUp = _ref7.onKeyUp;
+        onKeyUp = _ref7.onKeyUp,
+        onInput = _ref7.onInput;
 
 
     var inputItem = void 0;
@@ -286,7 +287,8 @@ var TextArea = function TextArea(_ref7, children) {
         id: id,
         value: value,
         required: required,
-        onkeyup: onKeyUp });
+        onkeyup: onKeyUp,
+        oninput: onInput });
 
     switch (labelType) {
         case 'fixed':
@@ -416,14 +418,24 @@ var Select = function Select(_ref10, children) {
 
 var Option = function Option(_ref11) {
     var text = _ref11.text,
-        value = _ref11.value;
+        value = _ref11.value,
+        isSelected = _ref11.isSelected;
 
-
-    return hyperapp.h(
-        'option',
-        { value: value },
-        text
-    );
+    var retVal = "";
+    if (isSelected) {
+        retVal = hyperapp.h(
+            'option',
+            { value: value, selected: true },
+            text
+        );
+    } else {
+        retVal = hyperapp.h(
+            'option',
+            { value: value },
+            text
+        );
+    }
+    return retVal;
 };
 
 var Chips = function Chips(_ref12, children) {
