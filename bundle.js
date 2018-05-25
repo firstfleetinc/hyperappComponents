@@ -277,7 +277,7 @@ var TextArea = function TextArea(_ref7, children) {
         label = _ref7.label,
         labelType = _ref7.labelType,
         onKeyUp = _ref7.onKeyUp,
-        onInput = _ref7.onInput;
+        onChange = _ref7.onChange;
 
 
     var inputItem = void 0;
@@ -288,7 +288,7 @@ var TextArea = function TextArea(_ref7, children) {
         value: value,
         required: required,
         onkeyup: onKeyUp,
-        oninput: onInput });
+        onchange: onChange });
 
     switch (labelType) {
         case 'fixed':

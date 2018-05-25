@@ -190,7 +190,7 @@ export const TextInput = ({ type, placeholder, name, id, value, required, label,
     )
 }
 
-export const TextArea = ({ placeholder, name, id, value, required, label, labelType, onKeyUp, onInput }, children) => {
+export const TextArea = ({ placeholder, name, id, value, required, label, labelType, onKeyUp, onChange }, children) => {
 
     let inputItem
     let input = (
@@ -201,7 +201,7 @@ export const TextArea = ({ placeholder, name, id, value, required, label, labelT
             value={value}
             required={required}
             onkeyup={onKeyUp}
-            oninput={onInput}>
+            onchange={onChange}>
         </textarea>
     )
 
