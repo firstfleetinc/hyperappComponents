@@ -578,6 +578,21 @@ var mergeClass = function mergeClass(classes) {
     return classes.join(' ');
 };
 
+var Modal = function Modal(_ref18, children) {
+    var style = _ref18.style;
+
+
+    return hyperapp.h(
+        'div',
+        { 'class': 'customModal', id: 'modal' },
+        hyperapp.h(
+            'div',
+            { 'class': 'modal-content' },
+            children
+        )
+    );
+};
+
 exports.Button = Button;
 exports.PageFab = PageFab;
 exports.ActionCard = ActionCard;
@@ -596,3 +611,4 @@ exports.Container = Container;
 exports.Panel = Panel;
 exports.LoadingSpinner = LoadingSpinner;
 exports.mergeClass = mergeClass;
+exports.Modal = Modal;

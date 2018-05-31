@@ -64,3 +64,14 @@ export const Panel = ({ style }, children) => {
         </div>
     )
 }
+
+export const Modal = ({style}, children) => {
+
+    return (
+        <div class='customModal' id='modal'>
+            <div class='modal-content'>
+                {children}
+            </div>
+        </div>     
+    )
+}

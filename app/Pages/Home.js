@@ -1,11 +1,13 @@
 import { h } from "hyperapp"
-import { Divider, Container, Panel } from '../components/Layout/Layout.js'
+import { Divider, Container, Panel, Modal } from '../components/Layout/Layout.js'
 import { Button, PageFab } from '../components/Buttons/Buttons.js'
 import { ActionCard } from '../components/Cards/Cards.js'
 import { Form, InlineForm, TextInput, TextArea, CheckBox, Select, Chips } from '../components/Forms/Form.js'
 import { LoadingSpinner } from '../components/Loading/Loading.js';
 
 export const Home = (state, actions) => props => {
+
+    let modal = state.showModal ? (<Modal ><Button onClick={() => {actions.hideModal()}} text='Hide Modal' color='danger'></Button></Modal>) : null;
 
     let checkBoxItems = [
         {
@@ -355,6 +357,21 @@ export const Home = (state, actions) => props => {
                 content='This is card content'
                 accentText='accenting'
                 secondaryText='secondary'></ActionCard>
+            </Panel>
+            <Divider type="bottom"><h1>Modal</h1></Divider>
+            <Panel>
+                <h3>Modal</h3>
+                <p>Renders children content in a modal</p>
+                <h4>Props</h4>
+                <ul>
+                    <li>children | string</li>
+                </ul>
+                <Button 
+                onClick={() => {actions.showModal()}} 
+                text='Show Modal'
+                color='primary'
+                ></Button>
+                {modal}
             </Panel>
         </Container >
     )

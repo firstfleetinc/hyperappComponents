@@ -421,3 +421,14 @@ export const LoadingSpinner = ({ }, children) => {
 export const mergeClass = (classes) => {
     return classes.join(' ')
 }
+
+export const Modal = ({style}, children) => {
+
+    return (
+        <div class='customModal' id='modal'>
+            <div class='modal-content'>
+                {children}
+            </div>
+        </div>     
+    )
+}

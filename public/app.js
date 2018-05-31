@@ -2041,6 +2041,14 @@ var _Loading = require('../components/Loading/Loading.js');
 var Home = exports.Home = function Home(state, actions) {
     return function (props) {
 
+        var modal = state.showModal ? (0, _hyperapp.h)(
+            _Layout.Modal,
+            null,
+            (0, _hyperapp.h)(_Buttons.Button, { onClick: function onClick() {
+                    actions.hideModal();
+                }, text: 'Hide Modal', color: 'danger' })
+        ) : null;
+
         var checkBoxItems = [{
             type: 'checkbox',
             name: 'checkbox',
@@ -2934,6 +2942,51 @@ var Home = exports.Home = function Home(state, actions) {
                     content: 'This is card content',
                     accentText: 'accenting',
                     secondaryText: 'secondary' })
+            ),
+            (0, _hyperapp.h)(
+                _Layout.Divider,
+                { type: 'bottom' },
+                (0, _hyperapp.h)(
+                    'h1',
+                    null,
+                    'Modal'
+                )
+            ),
+            (0, _hyperapp.h)(
+                _Layout.Panel,
+                null,
+                (0, _hyperapp.h)(
+                    'h3',
+                    null,
+                    'Modal'
+                ),
+                (0, _hyperapp.h)(
+                    'p',
+                    null,
+                    'Renders children content in a modal'
+                ),
+                (0, _hyperapp.h)(
+                    'h4',
+                    null,
+                    'Props'
+                ),
+                (0, _hyperapp.h)(
+                    'ul',
+                    null,
+                    (0, _hyperapp.h)(
+                        'li',
+                        null,
+                        'children | string'
+                    )
+                ),
+                (0, _hyperapp.h)(_Buttons.Button, {
+                    onClick: function onClick() {
+                        actions.showModal();
+                    },
+                    text: 'Show Modal',
+                    color: 'primary'
+                }),
+                modal
             )
         );
     };
@@ -2951,7 +3004,17 @@ exports.actions = undefined;
 var _router = require("@hyperapp/router");
 
 var actions = exports.actions = {
-  location: _router.location.actions
+  location: _router.location.actions,
+  showModal: function showModal(value) {
+    return function (state, actions) {
+      return { showModal: true };
+    };
+  },
+  hideModal: function hideModal(value) {
+    return function (state, actions) {
+      return { showModal: false };
+    };
+  }
 };
 });
 
@@ -3484,7 +3547,7 @@ var Chip = exports.Chip = function Chip(_ref10, children) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Panel = exports.Container = exports.Divider = undefined;
+exports.Modal = exports.Panel = exports.Container = exports.Divider = undefined;
 
 var _hyperapp = require('hyperapp');
 
@@ -3575,6 +3638,21 @@ var Panel = exports.Panel = function Panel(_ref3, children) {
         children
     );
 };
+
+var Modal = exports.Modal = function Modal(_ref4, children) {
+    var style = _ref4.style;
+
+
+    return (0, _hyperapp.h)(
+        'div',
+        { 'class': 'customModal', id: 'modal' },
+        (0, _hyperapp.h)(
+            'div',
+            { 'class': 'modal-content' },
+            children
+        )
+    );
+};
 });
 
 ;require.register("components/Loading/Loading.js", function(exports, require, module) {
@@ -3663,7 +3741,8 @@ exports.state = undefined;
 var _router = require("@hyperapp/router");
 
 var state = exports.state = {
-    location: _router.location.state
+    location: _router.location.state,
+    showModal: false
 };
 });
 

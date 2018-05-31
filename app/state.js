@@ -1,5 +1,6 @@
 import { location } from "@hyperapp/router"
 
 export const state = {
-    location: location.state
+    location: location.state,
+    showModal: false
   }
