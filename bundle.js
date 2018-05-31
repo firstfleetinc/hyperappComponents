@@ -609,6 +609,960 @@ var Modal = function Modal(_ref18, children) {
     );
 };
 
+var Docs = function Docs(state, actions) {
+    return function (props) {
+
+        var modal = state.showModal ? hyperapp.h(
+            Modal,
+            null,
+            hyperapp.h(Button, { onClick: function onClick() {
+                    actions.hideModal();
+                }, text: 'Hide Modal', color: 'danger' })
+        ) : null;
+
+        var checkBoxItems = [{
+            type: 'checkbox',
+            name: 'checkbox',
+            value: '1',
+            checked: true
+        }, {
+            type: 'checkbox',
+            name: 'checkbox',
+            value: '1'
+        }, {
+            type: 'checkbox',
+            name: 'checkbox',
+            value: '1'
+        }];
+
+        var raidoItems = [{
+            type: 'radio',
+            value: '1',
+            label: 'options 1',
+            name: 'group1',
+            checked: true
+        }, {
+            type: 'radio',
+            value: '2',
+            name: 'group1',
+            label: 'options 2'
+        }, {
+            type: 'radio',
+            value: '3',
+            name: 'group1',
+            label: 'options 3'
+        }];
+
+        var selectOptions = [{
+            text: 'option 1',
+            value: '1'
+        }, {
+            text: 'option 1',
+            value: '2'
+        }, {
+            text: 'option 3',
+            value: '3'
+        }];
+
+        var chipItems = [{
+            remove: true,
+            onRemove: function onRemove() {
+                console.log('remove clicked');
+            },
+            text: 'chip 1'
+        }, {
+            text: 'chip 2'
+        }, {
+            text: 'chip 3'
+        }];
+
+        var actionCardButtons = [{
+            text: 'Button 1',
+            type: 'raised',
+            color: 'primary'
+        }, {
+            text: 'Button 2',
+            type: 'flat',
+            color: 'danger'
+        }, {
+            text: '3',
+            type: 'float',
+            size: 'large',
+            color: 'accent'
+        }];
+        return hyperapp.h(
+            Container,
+            { fluid: false },
+            hyperapp.h(
+                Divider,
+                { type: 'bottom' },
+                hyperapp.h(
+                    'h1',
+                    null,
+                    'Important Links'
+                )
+            ),
+            hyperapp.h(
+                'ul',
+                null,
+                hyperapp.h(
+                    'li',
+                    null,
+                    hyperapp.h(
+                        'a',
+                        { href: 'https://www.muicss.com/' },
+                        'CSS Library'
+                    )
+                ),
+                hyperapp.h(
+                    'li',
+                    null,
+                    hyperapp.h(
+                        'a',
+                        { href: 'https://github.com/firstfleetinc/hyperappComponents' },
+                        'Github'
+                    )
+                )
+            ),
+            hyperapp.h(
+                Divider,
+                { type: 'bottom' },
+                hyperapp.h(
+                    'h1',
+                    null,
+                    'Layout Components'
+                )
+            ),
+            hyperapp.h(
+                Panel,
+                null,
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'Container'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'A page wrapper'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'fluid | boolean'
+                        )
+                    )
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'Divider'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'A line divider with padding, wrap component'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'type | [top, bottom, left, right]'
+                        )
+                    ),
+                    hyperapp.h(
+                        Divider,
+                        { type: 'top' },
+                        'top'
+                    ),
+                    hyperapp.h(
+                        Divider,
+                        { type: 'bottom' },
+                        'bottom'
+                    ),
+                    hyperapp.h('div', { style: { height: '16px' } }),
+                    hyperapp.h(
+                        Divider,
+                        { type: 'left' },
+                        'left'
+                    ),
+                    hyperapp.h(
+                        Divider,
+                        { type: 'right' },
+                        'right'
+                    )
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'Panel'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'Used for making cards / raised content areas'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'style | style object'
+                        )
+                    ),
+                    hyperapp.h(
+                        Panel,
+                        null,
+                        'PANEL'
+                    )
+                )
+            ),
+            hyperapp.h(
+                Divider,
+                { type: 'bottom' },
+                hyperapp.h(
+                    'h1',
+                    null,
+                    'Form Components'
+                )
+            ),
+            hyperapp.h(
+                Panel,
+                null,
+                hyperapp.h(
+                    'h3',
+                    null,
+                    'Form'
+                ),
+                hyperapp.h(
+                    'p',
+                    null,
+                    'Can take inputs as children'
+                ),
+                hyperapp.h(
+                    'h4',
+                    null,
+                    'Props'
+                ),
+                hyperapp.h(
+                    'ul',
+                    null,
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'title | string'
+                    ),
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'buttonText | string'
+                    ),
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'onSubmit | function'
+                    )
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(Form, {
+                        title: 'Form',
+                        buttonText: 'Button Text',
+                        onSubmit: function onSubmit() {
+                            console.log('submitted form');
+                        } })
+                ),
+                hyperapp.h(
+                    'h3',
+                    null,
+                    'Inline Form'
+                ),
+                hyperapp.h(
+                    'p',
+                    null,
+                    'Takes an input as a child'
+                ),
+                hyperapp.h(
+                    'h4',
+                    null,
+                    'Props'
+                ),
+                hyperapp.h(
+                    'ul',
+                    null,
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'buttonText | string'
+                    ),
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'onSubmit | function'
+                    )
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        InlineForm,
+                        {
+                            onSubmit: function onSubmit() {
+                                console.log('submitted inline form');
+                            },
+                            buttonText: 'Button Text' },
+                        hyperapp.h(TextInput, {
+                            type: 'text',
+                            name: 'InlineFormInput',
+                            id: 'InlineFormID',
+                            required: false,
+                            label: 'Inline Form',
+                            labelType: 'floating',
+                            value: '',
+                            onKeyUp: function onKeyUp(e) {
+                                return console.log(e.target.value);
+                            }
+                        })
+                    )
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'Text Input'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'should be usable for any html input type'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'type | any html 5 input type'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'placeholder | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'name | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'id | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'value | value for input'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'required | boolean, type effects form validation'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'label | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'labelType | fixed, floating, none'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'onChange | function'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'onKeyUp | function'
+                        )
+                    ),
+                    hyperapp.h(TextInput, {
+                        type: 'text',
+                        label: 'text input',
+                        labelType: 'fixed',
+                        onChange: function onChange() {
+                            console.log('onChange fired');
+                        },
+                        onKeyUp: function onKeyUp() {
+                            return console.log('onKeyUp Fired');
+                        }
+                    })
+                ),
+                hyperapp.h(
+                    Divider,
+                    {
+                        type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'TextArea'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'html text area'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'placeholder | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'name | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'id | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'value | value for input'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'required | boolean, type effects form validation'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'label | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'labelType | fixed, floating, none'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'onKeyUp | function'
+                        )
+                    ),
+                    hyperapp.h(TextArea, {
+                        placeholder: 'placeholder',
+                        label: 'text-area',
+                        labelType: 'fixed',
+                        onKeyUp: function onKeyUp() {
+                            return console.log('on key up fired');
+                        } })
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'Check Box / Radio Input'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'Both use the CheckBox component. You make an array of meta data for items. '
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props for CheckBox'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'items | array'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'type | checkbox || radio'
+                        )
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props for items'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'type | radio for radio || checkbox for checkbox'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            ' name | string : all radios in a group should have same name'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'id | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'value | input value'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'checked | boolean'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'disabled | boolean'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'required | boolean'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'label | string'
+                        )
+                    ),
+                    hyperapp.h(
+                        'form',
+                        null,
+                        hyperapp.h(CheckBox, { type: 'checkbox', items: checkBoxItems })
+                    ),
+                    hyperapp.h(
+                        'form',
+                        null,
+                        hyperapp.h(CheckBox, { type: 'radio', items: raidoItems })
+                    )
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'Select'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'Dropdown select, items are an array of meta data for items'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props for Select'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'items | array'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'type | checkbox || radio'
+                        )
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props for items'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'text | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'value | value for input'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'isSelected | boolean'
+                        )
+                    ),
+                    hyperapp.h(Select, { options: selectOptions })
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'Chips'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'Tagging element, chips is an array of meta data for chip'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props for Chips'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'chips | array'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'style | style object'
+                        )
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props for chip'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'remove | boolean, controls whether they have a remove button or not'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'onRemove | function'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'text | string'
+                        )
+                    ),
+                    hyperapp.h(Chips, { chips: chipItems })
+                )
+            ),
+            hyperapp.h(
+                Divider,
+                { type: 'bottom' },
+                hyperapp.h(
+                    'h1',
+                    null,
+                    'Buttons'
+                )
+            ),
+            hyperapp.h(
+                Panel,
+                null,
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'Button'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'A Button'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'type | [null, flat, raised, float]'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'color | [null, primary, accent, danger]'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'size | [null, small, large]'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'text | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'onClick | function'
+                        )
+                    ),
+                    hyperapp.h(Button, {
+                        color: 'primary',
+                        size: 'large',
+                        text: 'Button' }),
+                    hyperapp.h(Button, {
+                        type: 'flat',
+                        color: 'primary',
+                        text: 'Button flat primary' }),
+                    hyperapp.h(Button, {
+                        type: 'raised',
+                        color: 'accent',
+                        text: 'Button raised accent' }),
+                    hyperapp.h(Button, {
+                        type: 'float',
+                        color: 'danger',
+                        size: 'large',
+                        text: '+' })
+                ),
+                hyperapp.h(
+                    Divider,
+                    { type: 'bottom' },
+                    hyperapp.h(
+                        'h3',
+                        null,
+                        'PageFab'
+                    ),
+                    hyperapp.h(
+                        'p',
+                        null,
+                        'A page set floating button, sets a button in the lower right hand corner above other page content'
+                    ),
+                    hyperapp.h(
+                        'h4',
+                        null,
+                        'Props'
+                    ),
+                    hyperapp.h(
+                        'ul',
+                        null,
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'type | [null, flat, raised, float]'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'color | [null, primary, accent, danger]'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'size | [null, small, large]'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'text | string'
+                        ),
+                        hyperapp.h(
+                            'li',
+                            null,
+                            'onClick | function'
+                        )
+                    ),
+                    hyperapp.h(PageFab, {
+                        type: 'raised',
+                        color: 'primary',
+                        text: 'PageFab',
+                        size: 'large' })
+                )
+            ),
+            hyperapp.h(
+                Divider,
+                { type: 'bottom' },
+                hyperapp.h(
+                    'h1',
+                    null,
+                    'Cards'
+                )
+            ),
+            hyperapp.h(
+                Panel,
+                null,
+                hyperapp.h(
+                    'h3',
+                    null,
+                    'ActionCard'
+                ),
+                hyperapp.h(
+                    'p',
+                    null,
+                    'A card that can take a row of buttons'
+                ),
+                hyperapp.h(
+                    'h4',
+                    null,
+                    'Props'
+                ),
+                hyperapp.h(
+                    'ul',
+                    null,
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'title | string'
+                    ),
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'content | string'
+                    ),
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'secondaryText | string'
+                    ),
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'accentText | string'
+                    ),
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'buttons | array of button metatdata'
+                    )
+                ),
+                hyperapp.h(ActionCard, {
+                    buttons: actionCardButtons,
+                    title: 'Action Card',
+                    content: 'This is card content',
+                    accentText: 'accenting',
+                    secondaryText: 'secondary' })
+            ),
+            hyperapp.h(
+                Divider,
+                { type: 'bottom' },
+                hyperapp.h(
+                    'h1',
+                    null,
+                    'Modal'
+                )
+            ),
+            hyperapp.h(
+                Panel,
+                null,
+                hyperapp.h(
+                    'h3',
+                    null,
+                    'Modal'
+                ),
+                hyperapp.h(
+                    'p',
+                    null,
+                    'Renders children content in a modal'
+                ),
+                hyperapp.h(
+                    'h4',
+                    null,
+                    'Props'
+                ),
+                hyperapp.h(
+                    'ul',
+                    null,
+                    hyperapp.h(
+                        'li',
+                        null,
+                        'children | string'
+                    )
+                ),
+                hyperapp.h(Button, {
+                    onClick: function onClick() {
+                        actions.showModal();
+                    },
+                    text: 'Show Modal',
+                    color: 'primary'
+                }),
+                modal
+            )
+        );
+    };
+};
+
 exports.Button = Button;
 exports.PageFab = PageFab;
 exports.ActionCard = ActionCard;
@@ -628,3 +1582,4 @@ exports.Panel = Panel;
 exports.LoadingSpinner = LoadingSpinner;
 exports.mergeClass = mergeClass;
 exports.Modal = Modal;
+exports.Docs = Docs;
