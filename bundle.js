@@ -214,7 +214,8 @@ var TextInput = function TextInput(_ref6, children) {
         label = _ref6.label,
         labelType = _ref6.labelType,
         onChange = _ref6.onChange,
-        onKeyUp = _ref6.onKeyUp;
+        onKeyUp = _ref6.onKeyUp,
+        onCreate = _ref6.onCreate;
 
 
     var inputItem = void 0;
@@ -226,7 +227,9 @@ var TextInput = function TextInput(_ref6, children) {
         value: value,
         required: required,
         onchange: onChange,
-        onkeyup: onKeyUp });
+        onkeyup: onKeyUp,
+        oncreate: onCreate
+    });
 
     switch (labelType) {
         case 'fixed':

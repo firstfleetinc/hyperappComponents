@@ -25,7 +25,7 @@ export const InlineForm = ({ onSubmit, buttonText }, children) => {
     )
 }
 
-export const TextInput = ({ type, placeholder, name, id, value, required, label, labelType, onChange, onKeyUp }, children) => {
+export const TextInput = ({ type, placeholder, name, id, value, required, label, labelType, onChange, onKeyUp, onCreate, disabled }, children) => {
 
     let inputItem
     let input = (
@@ -37,7 +37,10 @@ export const TextInput = ({ type, placeholder, name, id, value, required, label,
             value={value}
             required={required}
             onchange={onChange}
-            onkeyup={onKeyUp}>
+            onkeyup={onKeyUp}
+            oncreate={onCreate}
+            disabled={disabled}
+            >
         </input>
     )
 

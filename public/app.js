@@ -3222,6 +3222,8 @@ var _hyperapp = require('hyperapp');
 
 var _Buttons = require('../Buttons/Buttons.js');
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var Form = exports.Form = function Form(_ref, children) {
     var title = _ref.title,
         buttonText = _ref.buttonText,
@@ -3270,7 +3272,9 @@ var TextInput = exports.TextInput = function TextInput(_ref3, children) {
         label = _ref3.label,
         labelType = _ref3.labelType,
         onChange = _ref3.onChange,
-        onKeyUp = _ref3.onKeyUp;
+        onKeyUp = _ref3.onKeyUp,
+        onCreate = _ref3.onCreate,
+        disabled = _ref3.disabled;
 
 
     var inputItem = void 0;
@@ -3282,7 +3286,10 @@ var TextInput = exports.TextInput = function TextInput(_ref3, children) {
         value: value,
         required: required,
         onchange: onChange,
-        onkeyup: onKeyUp });
+        onkeyup: onKeyUp,
+        oncreate: onCreate,
+        disabled: disabled
+    });
 
     switch (labelType) {
         case 'fixed':
@@ -3334,17 +3341,21 @@ var TextArea = exports.TextArea = function TextArea(_ref4, children) {
         required = _ref4.required,
         label = _ref4.label,
         labelType = _ref4.labelType,
-        onKeyUp = _ref4.onKeyUp;
+        onKeyUp = _ref4.onKeyUp,
+        onCreate = _ref4.onCreate,
+        onChange = _ref4.onChange;
 
 
     var inputItem = void 0;
-    var input = (0, _hyperapp.h)('textarea', {
+    var input = (0, _hyperapp.h)('textarea', _defineProperty({
         placeholder: placeholder,
         name: name,
         id: id,
         value: value,
         required: required,
-        onkeyup: onKeyUp });
+        onchange: onChange,
+        onkeyup: onKeyUp
+    }, 'onchange', onChange));
 
     switch (labelType) {
         case 'fixed':
@@ -3856,7 +3867,7 @@ require.alias("whatwg-fetch/fetch.js", "whatwg-fetch");require.register("___glob
       });
     }
   };
-  var port = ar.port || 9486;
+  var port = ar.port || 9485;
   var host = br.server || window.location.hostname || 'localhost';
 
   var connect = function connect() {
