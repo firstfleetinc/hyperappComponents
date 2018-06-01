@@ -284,7 +284,7 @@ export const CheckBox = ({ type, items }) => {
     return boxType
 }
 
-export const Select = ({ options, required, label, onChange }, children) => {
+export const Select = ({ options, required, label, onChange, name }, children) => {
 
     let optionList = options.map((item) => {
         return <Option {...item}></Option>
@@ -293,6 +293,7 @@ export const Select = ({ options, required, label, onChange }, children) => {
     return (
         <div class='mui-select'>
             <select
+                name = {name}    
                 required={required}
                 onchange={onChange}>
                 {optionList}

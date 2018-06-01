@@ -215,7 +215,8 @@ var TextInput = function TextInput(_ref6, children) {
         labelType = _ref6.labelType,
         onChange = _ref6.onChange,
         onKeyUp = _ref6.onKeyUp,
-        onCreate = _ref6.onCreate;
+        onCreate = _ref6.onCreate,
+        disabled = _ref6.disabled;
 
 
     var inputItem = void 0;
@@ -228,7 +229,8 @@ var TextInput = function TextInput(_ref6, children) {
         required: required,
         onchange: onChange,
         onkeyup: onKeyUp,
-        oncreate: onCreate
+        oncreate: onCreate,
+        disabled: disabled
     });
 
     switch (labelType) {
@@ -398,7 +400,8 @@ var Select = function Select(_ref10, children) {
     var options = _ref10.options,
         required = _ref10.required,
         label = _ref10.label,
-        onChange = _ref10.onChange;
+        onChange = _ref10.onChange,
+        name = _ref10.name;
 
 
     var optionList = options.map(function (item) {
@@ -411,6 +414,7 @@ var Select = function Select(_ref10, children) {
         hyperapp.h(
             'select',
             {
+                name: name,
                 required: required,
                 onchange: onChange },
             optionList
