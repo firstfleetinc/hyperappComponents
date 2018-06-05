@@ -406,8 +406,12 @@ var Select = function Select(_ref10, children) {
         required = _ref10.required,
         label = _ref10.label,
         onChange = _ref10.onChange,
+<<<<<<< HEAD
         disabled = _ref10.disabled,
         value = _ref10.value;
+=======
+        name = _ref10.name;
+>>>>>>> 3a8af7e9c9c17176ea2a925314f91978fe588407
 
 
     var optionList = options.map(function (item) {
@@ -420,6 +424,7 @@ var Select = function Select(_ref10, children) {
         hyperapp.h(
             'select',
             {
+                name: name,
                 required: required,
                 onchange: onChange,
                 value: value,
