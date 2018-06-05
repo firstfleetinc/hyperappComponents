@@ -215,7 +215,8 @@ var TextInput = function TextInput(_ref6, children) {
         labelType = _ref6.labelType,
         onChange = _ref6.onChange,
         onKeyUp = _ref6.onKeyUp,
-        onCreate = _ref6.onCreate;
+        onCreate = _ref6.onCreate,
+        disabled = _ref6.disabled;
 
 
     var inputItem = void 0;
@@ -228,7 +229,8 @@ var TextInput = function TextInput(_ref6, children) {
         required: required,
         onchange: onChange,
         onkeyup: onKeyUp,
-        oncreate: onCreate
+        oncreate: onCreate,
+        disabled: disabled
     });
 
     switch (labelType) {
@@ -274,6 +276,8 @@ var TextInput = function TextInput(_ref6, children) {
 };
 
 var TextArea = function TextArea(_ref7, children) {
+    var _h;
+
     var placeholder = _ref7.placeholder,
         name = _ref7.name,
         id = _ref7.id,
@@ -283,11 +287,12 @@ var TextArea = function TextArea(_ref7, children) {
         labelType = _ref7.labelType,
         onKeyUp = _ref7.onKeyUp,
         onCreate = _ref7.onCreate,
-        onChange = _ref7.onChange;
+        onChange = _ref7.onChange,
+        disabled = _ref7.disabled;
 
 
     var inputItem = void 0;
-    var input = hyperapp.h('textarea', _defineProperty({
+    var input = hyperapp.h('textarea', (_h = {
         placeholder: placeholder,
         name: name,
         id: id,
@@ -295,7 +300,7 @@ var TextArea = function TextArea(_ref7, children) {
         required: required,
         onchange: onChange,
         onkeyup: onKeyUp
-    }, 'onchange', onChange));
+    }, _defineProperty(_h, 'onchange', onChange), _defineProperty(_h, 'disabled', disabled), _h));
 
     switch (labelType) {
         case 'fixed':
@@ -347,24 +352,26 @@ var CheckBoxInput = function CheckBoxInput(_ref8, children) {
         checked = _ref8.checked,
         disabled = _ref8.disabled,
         required = _ref8.required,
-        label = _ref8.label;
+        label = _ref8.label,
+        onChange = _ref8.onChange;
 
 
     return hyperapp.h(
         'label',
-        null,
-        hyperapp.h(
-            'input',
-            {
-                type: type,
-                name: name,
-                id: id,
-                value: value,
-                checked: checked,
-                disabled: disabled,
-                required: required },
-            label
-        )
+        { style: {
+                display: 'flex',
+                alignItems: 'center'
+            } },
+        hyperapp.h('input', {
+            type: type,
+            name: name,
+            id: id,
+            value: value,
+            checked: checked,
+            disabled: disabled,
+            required: required,
+            onchange: onChange }),
+        label
     );
 };
 
@@ -398,7 +405,9 @@ var Select = function Select(_ref10, children) {
     var options = _ref10.options,
         required = _ref10.required,
         label = _ref10.label,
-        onChange = _ref10.onChange;
+        onChange = _ref10.onChange,
+        disabled = _ref10.disabled,
+        value = _ref10.value;
 
 
     var optionList = options.map(function (item) {
@@ -412,7 +421,10 @@ var Select = function Select(_ref10, children) {
             'select',
             {
                 required: required,
-                onchange: onChange },
+                onchange: onChange,
+                value: value,
+                disabled: disabled
+            },
             optionList
         ),
         hyperapp.h(

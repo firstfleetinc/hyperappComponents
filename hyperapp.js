@@ -193,8 +193,7 @@ export const TextInput = ({ type, placeholder, name, id, value, required, label,
     )
 }
 
-
-export const TextArea = ({ placeholder, name, id, value, required, label, labelType, onKeyUp, onCreate, onChange }, children) => {
+export const TextArea = ({ placeholder, name, id, value, required, label, labelType, onKeyUp, onCreate, onChange, disabled }, children) => {
 
     let inputItem
     let input = (
@@ -206,7 +205,8 @@ export const TextArea = ({ placeholder, name, id, value, required, label, labelT
             required={required}
             onchange={onChange}
             onkeyup={onKeyUp}
-            onchange={onChange}>
+            onchange={onChange}
+            disabled={disabled}>
         </textarea>
     )
 
@@ -243,10 +243,13 @@ export const TextArea = ({ placeholder, name, id, value, required, label, labelT
     )
 }
 
-export const CheckBoxInput = ({ type, name, id, value, checked, disabled, required, label }, children) => {
+export const CheckBoxInput = ({ type, name, id, value, checked, disabled, required, label, onChange }, children) => {
 
     return (
-        <label>
+        <label style={{
+            display: 'flex',
+            alignItems: 'center'
+        }}>
             <input
                 type={type}
                 name={name}
@@ -254,9 +257,9 @@ export const CheckBoxInput = ({ type, name, id, value, checked, disabled, requir
                 value={value}
                 checked={checked}
                 disabled={disabled}
-                required={required}>
+                required={required}
+                onchange={onChange} />
                 {label}
-            </input>
         </label>
     )
 }
@@ -284,7 +287,7 @@ export const CheckBox = ({ type, items }) => {
     return boxType
 }
 
-export const Select = ({ options, required, label, onChange }, children) => {
+export const Select = ({ options, required, label, onChange, disabled, value }, children) => {
 
     let optionList = options.map((item) => {
         return <Option {...item}></Option>
@@ -294,7 +297,10 @@ export const Select = ({ options, required, label, onChange }, children) => {
         <div class='mui-select'>
             <select
                 required={required}
-                onchange={onChange}>
+                onchange={onChange}
+                value={value}
+                disabled={disabled}
+                >
                 {optionList}
             </select>
             <label>{label}</label>
@@ -312,7 +318,6 @@ export const Option = ({ text, value, isSelected }) => {
     }
     return retVal
 }
-
 
 export const Chips = ({ chips, style }, children) => {
 

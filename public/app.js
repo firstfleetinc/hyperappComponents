@@ -3413,18 +3413,15 @@ var CheckBoxInput = exports.CheckBoxInput = function CheckBoxInput(_ref5, childr
     return (0, _hyperapp.h)(
         'label',
         null,
-        (0, _hyperapp.h)(
-            'input',
-            {
-                type: type,
-                name: name,
-                id: id,
-                value: value,
-                checked: checked,
-                disabled: disabled,
-                required: required },
-            label
-        )
+        (0, _hyperapp.h)('input', {
+            type: type,
+            name: name,
+            id: id,
+            value: value,
+            checked: checked,
+            disabled: disabled,
+            required: required }),
+        label
     );
 };
 
@@ -3867,7 +3864,7 @@ require.alias("whatwg-fetch/fetch.js", "whatwg-fetch");require.register("___glob
       });
     }
   };
-  var port = ar.port || 9485;
+  var port = ar.port || 9486;
   var host = br.server || window.location.hostname || 'localhost';
 
   var connect = function connect() {
