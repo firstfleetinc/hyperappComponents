@@ -13,7 +13,9 @@ var Button = function Button(_ref, children) {
         color = _ref.color,
         size = _ref.size,
         text = _ref.text,
-        onClick = _ref.onClick;
+        onClick = _ref.onClick,
+        _ref$disabled = _ref.disabled,
+        disabled = _ref$disabled === undefined ? false : _ref$disabled;
 
     var baseClass = 'mui-btn';
     var classType = null;
@@ -77,7 +79,7 @@ var Button = function Button(_ref, children) {
 
     return hyperapp.h(
         'button',
-        { 'class': baseClass, onclick: onClick },
+        { 'class': baseClass, onclick: onClick, disabled: disabled },
         text
     );
 };
@@ -93,7 +95,7 @@ var PageFab = function PageFab(_ref2, children) {
     return hyperapp.h(
         'div',
         { 'class': 'mui-footer-fab', style: { zIndex: '1000' } },
-        hyperapp.h(Button, { type: type, color: color, size: size, text: text, onClick: onClick })
+        hyperapp.h(Button, { type: type, color: color, size: size, text: text, onClick: onClick, disabled: disabled })
     );
 };
 
@@ -406,13 +408,8 @@ var Select = function Select(_ref10, children) {
         required = _ref10.required,
         label = _ref10.label,
         onChange = _ref10.onChange,
-<<<<<<< HEAD
         disabled = _ref10.disabled,
         value = _ref10.value;
-=======
-        name = _ref10.name;
->>>>>>> 3a8af7e9c9c17176ea2a925314f91978fe588407
-
 
     var optionList = options.map(function (item) {
         return hyperapp.h(Option, item);

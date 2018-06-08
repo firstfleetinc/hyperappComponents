@@ -1,6 +1,6 @@
 import { h } from 'hyperapp';
 
-export const Button = ({type, color, size, text, onClick}, children) => {
+export const Button = ({type, color, size, text, onClick, disabled = false}, children) => {
     let baseClass = 'mui-btn'
     let classType = null
     let classColor = null
@@ -53,7 +53,7 @@ export const Button = ({type, color, size, text, onClick}, children) => {
     baseClass = mergeClass([baseClass, classType, classColor, classSize, 'btn'])
 
     return (
-        <button class={baseClass} onclick={onClick}>{text}</button>
+        <button class={baseClass} onclick={onClick} disabled={disabled}>{text}</button>
     )
 }
 
@@ -61,7 +61,7 @@ export const PageFab = ({color, size, text, onClick, type}, children) => {
 
     return (
         <div class="mui-footer-fab" style={{zIndex: '1000'}}>
-            <Button type={type} color={color} size={size} text={text} onClick={onClick}></Button>
+            <Button type={type} color={color} size={size} text={text} onClick={onClick} disabled={disabled}></Button>
         </div>
     )
 }
@@ -287,12 +287,7 @@ export const CheckBox = ({ type, items }) => {
     return boxType
 }
 
-<<<<<<< HEAD
 export const Select = ({ options, required, label, onChange, disabled, value }, children) => {
-=======
-export const Select = ({ options, required, label, onChange, name }, children) => {
->>>>>>> 3a8af7e9c9c17176ea2a925314f91978fe588407
-
     let optionList = options.map((item) => {
         return <Option {...item}></Option>
     })

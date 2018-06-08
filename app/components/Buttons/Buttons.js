@@ -1,7 +1,7 @@
 import { h } from 'hyperapp'
 import { mergeClass } from '../Util/cssUtils.js'
 
-export const Button = ({type, color, size, text, onClick}, children) => {
+export const Button = ({type, color, size, text, onClick, disabled = false}, children) => {
     let baseClass = 'mui-btn'
     let classType = null
     let classColor = null
@@ -54,7 +54,7 @@ export const Button = ({type, color, size, text, onClick}, children) => {
     baseClass = mergeClass([baseClass, classType, classColor, classSize, 'btn'])
 
     return (
-        <button class={baseClass} onclick={onClick}>{text}</button>
+        <button class={baseClass} onclick={onClick} disabled={disabled}>{text}</button>
     )
 }
 
