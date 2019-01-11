@@ -171,9 +171,11 @@ var ActionCard = function ActionCard(_ref3, children) {
 var Form = function Form(_ref4, children) {
     var title = _ref4.title,
         buttonText = _ref4.buttonText,
-        onSubmit = _ref4.onSubmit;
+        onSubmit = _ref4.onSubmit,
+        _ref4$showSubmit = _ref4.showSubmit,
+        showSubmit = _ref4$showSubmit === undefined ? true : _ref4$showSubmit;
 
-
+    var submit = showSubmit ? hyperapp.h(Button, { color: 'primary', text: buttonText }) : null;
     return hyperapp.h(
         'form',
         { 'class': 'mui-form', onsubmit: function onsubmit(e) {
@@ -185,7 +187,7 @@ var Form = function Form(_ref4, children) {
             title
         ),
         children,
-        hyperapp.h(Button, { color: 'primary', text: buttonText })
+        submit
     );
 };
 

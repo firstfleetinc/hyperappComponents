@@ -117,13 +117,13 @@ export const ActionCard = ({ title, content, secondaryText, accentText, buttons 
     )
 }
 
-export const Form = ({ title, buttonText, onSubmit }, children) => {
-
+export const Form = ({ title, buttonText, onSubmit, showSubmit = true }, children) => {
+    let submit = showSubmit ? <Button color='primary' text={buttonText}></Button> : null;
     return (
         <form class='mui-form' onsubmit={(e) => { e.preventDefault(); onSubmit() }}>
             <legend>{title}</legend>
             {children}
-            <Button color='primary' text={buttonText}></Button>
+            {submit}
         </form>
     )
 }
