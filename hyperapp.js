@@ -141,7 +141,7 @@ export const InlineForm = ({ onSubmit, buttonText }, children) => {
     )
 }
 
-export const TextInput = ({ type, placeholder, name, id, value, required, label, labelType, onChange, onKeyUp, onCreate, disabled }, children) => {
+export const TextInput = ({ type, placeholder, name, id, value, required, label, labelType, onChange, onKeyUp, onCreate, disabled, onFocus, onBlur }, children) => {
 
     let inputItem
     let input = (
@@ -156,6 +156,8 @@ export const TextInput = ({ type, placeholder, name, id, value, required, label,
             onkeyup={onKeyUp}
             oncreate={onCreate}
             disabled={disabled}
+            onfocus={onFocus}
+            onblur={onBlur}
             >
         </input>
     )
@@ -287,23 +289,26 @@ export const CheckBox = ({ type, items }) => {
     return boxType
 }
 
-export const Select = ({ options, required, label, onChange, disabled, value }, children) => {
+export const Select = ({ options, required, label, onChange, disabled, value, Selectstyle, onFocus, onBlur, Containerstyle, Labelstyle }, children) => {
     let optionList = options.map((item) => {
         return <Option {...item}></Option>
     })
 
     return (
-        <div class='mui-select'>
+        <div class='mui-select' style={Containerstyle}>
             <select
                 name = {name}    
                 required={required}
                 onchange={onChange}
                 value={value}
                 disabled={disabled}
+                style={Selectstyle}
+                onfocus={onFocus}
+                onblur={onBlur}
                 >
                 {optionList}
             </select>
-            <label>{label}</label>
+            <label style={Labelstyle}>{label}</label>
         </div>
     )
 }

@@ -220,7 +220,9 @@ var TextInput = function TextInput(_ref6, children) {
         onChange = _ref6.onChange,
         onKeyUp = _ref6.onKeyUp,
         onCreate = _ref6.onCreate,
-        disabled = _ref6.disabled;
+        disabled = _ref6.disabled,
+        onFocus = _ref6.onFocus,
+        onBlur = _ref6.onBlur;
 
 
     var inputItem = void 0;
@@ -234,7 +236,9 @@ var TextInput = function TextInput(_ref6, children) {
         onchange: onChange,
         onkeyup: onKeyUp,
         oncreate: onCreate,
-        disabled: disabled
+        disabled: disabled,
+        onfocus: onFocus,
+        onblur: onBlur
     });
 
     switch (labelType) {
@@ -411,7 +415,12 @@ var Select = function Select(_ref10, children) {
         label = _ref10.label,
         onChange = _ref10.onChange,
         disabled = _ref10.disabled,
-        value = _ref10.value;
+        value = _ref10.value,
+        Selectstyle = _ref10.Selectstyle,
+        onFocus = _ref10.onFocus,
+        onBlur = _ref10.onBlur,
+        Containerstyle = _ref10.Containerstyle,
+        Labelstyle = _ref10.Labelstyle;
 
     var optionList = options.map(function (item) {
         return hyperapp.h(Option, item);
@@ -419,7 +428,7 @@ var Select = function Select(_ref10, children) {
 
     return hyperapp.h(
         'div',
-        { 'class': 'mui-select' },
+        { 'class': 'mui-select', style: Containerstyle },
         hyperapp.h(
             'select',
             {
@@ -427,13 +436,16 @@ var Select = function Select(_ref10, children) {
                 required: required,
                 onchange: onChange,
                 value: value,
-                disabled: disabled
+                disabled: disabled,
+                style: Selectstyle,
+                onfocus: onFocus,
+                onblur: onBlur
             },
             optionList
         ),
         hyperapp.h(
             'label',
-            null,
+            { style: Labelstyle },
             label
         )
     );
