@@ -30,7 +30,7 @@
     "babel-preset-latest": "^6.24.1",
     "babelrc-rollup": "^3.0.0",
     "brunch": "^4.0.0",
-    "clean-css-brunch": "^2",
+    "clean-css-brunch": "^3.0.0",
     "rollup": "^0.56.4",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.3.4",
