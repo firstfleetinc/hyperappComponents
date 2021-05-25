@@ -12,8 +12,8 @@
   "dependencies": {
     "@hyperapp/logger": "^0.4.1",
     "@hyperapp/router": "^0.4.1",
-    "es6-promise": "^4.2.4",
-    "hyperapp": "^1.0.2",
+    "es6-promise": "^4.2.8",
+    "hyperapp": "^1.2.10",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
@@ -29,12 +29,12 @@
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-latest": "^6.24.1",
     "babelrc-rollup": "^3.0.0",
-    "brunch": "^2",
+    "brunch": "^2.10.17",
     "clean-css-brunch": "^2",
     "rollup": "^0.56.4",
-    "rollup-plugin-babel": "^3.0.4",
-    "rollup-plugin-commonjs": "^9.0.0",
-    "rollup-plugin-multi-entry": "^2.0.2",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-multi-entry": "^2.1.0",
     "uglify-js-brunch": "^2"
   }
 }
